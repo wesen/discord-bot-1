@@ -29,6 +29,7 @@ If you want the public embedding paths instead of the standalone repo-driven CLI
 - `poker/` — video poker hand management, Hold'em action advice, buttons, and modals
 - `interaction-types/` — demo of all Discord application command interaction types: slash commands, subcommands, user context menu commands, and message context menu commands
 - `ui-showcase/` — comprehensive UI DSL showcase: builder patterns, modal forms, stateful search/review screens, paginated lists, card galleries, confirmations, all select menu types, and alias registration
+- `soup/` — no-database soup-making bot using the Go-side UI DSL for cards, selects, buttons, and a customization modal
 - `show-space/` — venue operations bot for upcoming shows, announcement posting, pin management, DB-backed show records, and a debug dashboard for role troubleshooting
 - `announcements.js` — root-level bot script to exercise direct file discovery
 - `unified-demo/` — demonstrates the new unified pattern: `defineBot(...)` for Discord behavior plus `__verb__("run")` / `__verb__("status")` metadata for CLI integration
@@ -107,7 +108,7 @@ If `--bot-repository` is omitted, `discord-bot` still falls back to `DISCORD_BOT
 - `/poker-help` includes quick-action buttons and modal entry points for rank/action examples.
 - `knowledge-base` listens passively for knowledge candidates in opted-in channels, records them to SQLite, and adds `/remember`, `/teach`, `/ask`, `/kb-search`, `/article`, `/kb-article`, `/review`, `/kb-review`, `/kb-verify`, `/kb-stale`, `/kb-reject`, `/recent`, and `/kb-recent`.
 - The review queue now uses a select menu, action buttons, and an edit modal, trusted reactions can promote a captured message into the review queue, and `/ask` / `/kb-search` now return rich result cards with source citations, related-entry hints, source detail views, pagination, autocomplete, and an export-to-channel action.
-- `!support`, `!modping`, `!poker`, and `!pingjs` message triggers exercise each bot's own `messageCreate` handling.
+- `!support`, `!modping`, `!poker`, `!soup`, and `!pingjs` message triggers exercise each bot's own `messageCreate` handling.
 - `moderation` now also logs message edit/delete lifecycle events, reaction add/remove events, and guild member join/update/remove events to demonstrate the early DISCORD-BOT-009 event-expansion slices.
 - `moderation` also now includes host-backed `mod-add-role`, `mod-timeout`, `mod-kick`, `mod-ban`, and `mod-unban` commands that demonstrate `ctx.discord.members.*` operations using explicit Discord IDs.
 - `moderation` now also includes `mod-list-messages`, `mod-fetch-message`, `mod-pin`, `mod-unpin`, `mod-list-pins`, `mod-bulk-delete`, `mod-fetch-channel`, `mod-set-topic`, `mod-set-slowmode`, `mod-fetch-guild`, `mod-list-roles`, `mod-fetch-role`, `mod-fetch-member`, and `mod-list-members` to demonstrate the DISCORD-BOT-010 message/channel moderation utilities, the DISCORD-BOT-011 guild/role lookup helpers, the DISCORD-BOT-012 member lookup helpers, and the new DISCORD-BOT-013 message history helpers.
